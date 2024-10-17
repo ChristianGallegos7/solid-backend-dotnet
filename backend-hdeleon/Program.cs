@@ -1,5 +1,7 @@
 using backend_hdeleon.Models;
 using backend_hdeleon.Models.DTOs;
+using backend_hdeleon.Services;
+using backend_hdeleon.Services.Impl;
 using backend_hdeleon.Validators;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +20,8 @@ builder.Services.AddDbContext<DBContext>(options =>
 builder.Services.AddScoped<IValidator<BeerInsertDto>, BeerInsertValidator>();
 builder.Services.AddScoped<IValidator<BeerUpdateDto>, BeerUpdateValidator>();
 
+//Servicios
+builder.Services.AddScoped<IBeerService, BeerService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

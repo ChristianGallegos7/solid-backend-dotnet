@@ -1,5 +1,6 @@
 ﻿using backend_hdeleon.Models;
 using backend_hdeleon.Models.DTOs;
+using backend_hdeleon.Services;
 using backend_hdeleon.Validators;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
@@ -14,42 +15,27 @@ namespace backend_hdeleon.Controllers
         private DBContext _contexto;
         private IValidator<BeerInsertDto> _beerInsertValidator;
         private IValidator<BeerUpdateDto> _beerUpdateValidator;
-        public BeerController(DBContext contexto, IValidator<BeerInsertDto> beerValidator, IValidator<BeerUpdateDto> beerUpdateDto)
+        private IBeerService _beerService;
+        public BeerController(DBContext contexto, IValidator<BeerInsertDto> beerValidator, IValidator<BeerUpdateDto> beerUpdateDto, IBeerService beerService)
         {
             _contexto = contexto;
             _beerInsertValidator = beerValidator;
             _beerUpdateValidator = beerUpdateDto;
+            _beerService = beerService;
         }
 
         [HttpGet]
         public async Task<IEnumerable<BeerDto>> GetAll() =>
-           await _contexto.Beers.Select(bear => new BeerDto
-            {
-                BeerId = bear.BeerId,
-                Name = bear.Name,
-                Alcohol = bear.Alcohol,
-                BrandId = bear.BrandId
-            }).ToListAsync();
+          await _beerService.Get();
+
 
         [HttpGet("{id}")]
         public async Task<ActionResult<BeerDto>> GetById(int id)
         {
-            var beer = await _contexto.Beers.FindAsync(id);
+           var beerDto = await _beerService.GetById(id);
 
-            if (beer == null)
-            {
-                return NotFound();
-            }
+            return beerDto == null ? NotFound() : Ok();
 
-            var beerDto = new BeerDto
-            {
-                BeerId = beer.BeerId,
-                Name = beer.Name,
-                Alcohol = beer.Alcohol,
-                BrandId = beer.BrandId
-            };
-
-            return Ok(beerDto);
         }
 
         [HttpPost]
