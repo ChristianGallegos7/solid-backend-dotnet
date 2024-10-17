@@ -1,8 +1,9 @@
 ﻿using backend_hdeleon.Models;
 using backend_hdeleon.Models.DTOs;
+using backend_hdeleon.Validators;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace backend_hdeleon.Controllers
 {
@@ -11,10 +12,13 @@ namespace backend_hdeleon.Controllers
     public class BeerController : ControllerBase
     {
         private DBContext _contexto;
-
-        public BeerController(DBContext contexto)
+        private IValidator<BeerInsertDto> _beerInsertValidator;
+        private IValidator<BeerUpdateDto> _beerUpdateValidator;
+        public BeerController(DBContext contexto, IValidator<BeerInsertDto> beerValidator, IValidator<BeerUpdateDto> beerUpdateDto)
         {
             _contexto = contexto;
+            _beerInsertValidator = beerValidator;
+            _beerUpdateValidator = beerUpdateDto;
         }
 
         [HttpGet]
@@ -51,6 +55,13 @@ namespace backend_hdeleon.Controllers
         [HttpPost]
         public async Task<ActionResult<BeerDto>> Add(BeerInsertDto beerInsertDto)
         {
+            var validationResult = await _beerInsertValidator.ValidateAsync(beerInsertDto);
+
+            if(!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.Errors);
+            }
+
             var beer = new Beer()
             {
                 Name = beerInsertDto.Name,
@@ -75,6 +86,13 @@ namespace backend_hdeleon.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult<BeerDto>> Update(int id, BeerUpdateDto beerUpdateDto)
         {
+            var validationResult = await _beerUpdateValidator.ValidateAsync(beerUpdateDto);
+
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.Errors);
+            }
+
             var beer = await _contexto.Beers.FindAsync(id);
 
             if(beer == null)
