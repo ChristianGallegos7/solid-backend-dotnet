@@ -98,5 +98,20 @@ namespace backend_hdeleon.Controllers
 
             return Ok(beerDto);
         }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(int id) {
+
+            var beer = await _contexto.Beers.FindAsync(id);
+
+            if(beer == null){
+                return NotFound();
+            }
+
+            _contexto.Beers.Remove(beer);
+            await _contexto.SaveChangesAsync();
+
+            return Ok();
+        }
     }
 }

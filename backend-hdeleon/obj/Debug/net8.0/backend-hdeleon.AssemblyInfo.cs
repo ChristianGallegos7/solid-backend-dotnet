@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("backend-hdeleon")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce16d179b76e3a4c84a56cae0ad1e5cb0248ef86")]
 [assembly: System.Reflection.AssemblyProductAttribute("backend-hdeleon")]
 [assembly: System.Reflection.AssemblyTitleAttribute("backend-hdeleon")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
