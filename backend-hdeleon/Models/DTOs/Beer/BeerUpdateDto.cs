@@ -1,4 +1,4 @@
-﻿namespace backend_hdeleon.Models.DTOs
+﻿namespace backend_hdeleon.Models.DTOs.Beer
 {
     public class BeerUpdateDto
     {

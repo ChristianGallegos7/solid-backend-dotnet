@@ -11,6 +11,7 @@ namespace backend_hdeleon.Models
 
         public DbSet<Brand> Brands { get; set; }
         
+        public DbSet<User> Users { get; set; }
 
     }
 }

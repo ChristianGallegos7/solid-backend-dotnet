@@ -1,4 +1,4 @@
-﻿using backend_hdeleon.Models.DTOs;
+﻿using backend_hdeleon.Models.DTOs.Beer;
 using FluentValidation;
 
 namespace backend_hdeleon.Validators

@@ -1,5 +1,5 @@
 ﻿using backend_hdeleon.Models;
-using backend_hdeleon.Models.DTOs;
+using backend_hdeleon.Models.DTOs.Beer;
 using backend_hdeleon.Services;
 using backend_hdeleon.Validators;
 using FluentValidation;

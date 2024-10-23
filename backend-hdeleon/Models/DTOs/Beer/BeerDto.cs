@@ -1,7 +1,9 @@
-﻿namespace backend_hdeleon.Models.DTOs
+﻿namespace backend_hdeleon.Models.DTOs.Beer
 {
-    public class BeerInsertDto
+    public class BeerDto
     {
+        public int BeerId { get; set; }
+
         public string? Name { get; set; }
 
         public int BrandId { get; set; }

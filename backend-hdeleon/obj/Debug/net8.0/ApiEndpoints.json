@@ -9,7 +9,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[backend_hdeleon.Models.DTOs.BeerDto, backend-hdeleon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[backend_hdeleon.Models.DTOs.Beer.BeerDto, backend-hdeleon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -29,13 +29,13 @@
     "Parameters": [
       {
         "Name": "beerInsertDto",
-        "Type": "backend_hdeleon.Models.DTOs.BeerInsertDto",
+        "Type": "backend_hdeleon.Models.DTOs.Beer.BeerInsertDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "backend_hdeleon.Models.DTOs.BeerDto",
+        "Type": "backend_hdeleon.Models.DTOs.Beer.BeerDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -61,7 +61,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "backend_hdeleon.Models.DTOs.BeerDto",
+        "Type": "backend_hdeleon.Models.DTOs.Beer.BeerDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -86,13 +86,13 @@
       },
       {
         "Name": "beerUpdateDto",
-        "Type": "backend_hdeleon.Models.DTOs.BeerUpdateDto",
+        "Type": "backend_hdeleon.Models.DTOs.Beer.BeerUpdateDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "backend_hdeleon.Models.DTOs.BeerDto",
+        "Type": "backend_hdeleon.Models.DTOs.Beer.BeerDto",
         "MediaTypes": [
           "text/plain",
           "application/json",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chris\\Escritorio\\backend-hdeleon\\backend-hdeleon\\backend-hdeleon.csproj": {}
+    "C:\\Users\\chris\\Escritorio\\workspace\\backend-hdeleon\\backend-hdeleon\\backend-hdeleon.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chris\\Escritorio\\backend-hdeleon\\backend-hdeleon\\backend-hdeleon.csproj": {
+    "C:\\Users\\chris\\Escritorio\\workspace\\backend-hdeleon\\backend-hdeleon\\backend-hdeleon.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chris\\Escritorio\\backend-hdeleon\\backend-hdeleon\\backend-hdeleon.csproj",
+        "projectUniqueName": "C:\\Users\\chris\\Escritorio\\workspace\\backend-hdeleon\\backend-hdeleon\\backend-hdeleon.csproj",
         "projectName": "backend-hdeleon",
-        "projectPath": "C:\\Users\\chris\\Escritorio\\backend-hdeleon\\backend-hdeleon\\backend-hdeleon.csproj",
+        "projectPath": "C:\\Users\\chris\\Escritorio\\workspace\\backend-hdeleon\\backend-hdeleon\\backend-hdeleon.csproj",
         "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chris\\Escritorio\\backend-hdeleon\\backend-hdeleon\\obj\\",
+        "outputPath": "C:\\Users\\chris\\Escritorio\\workspace\\backend-hdeleon\\backend-hdeleon\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
